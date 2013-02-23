@@ -7,30 +7,16 @@
 #include "TimerAinit.h"
 #include <stdlib.h>
 
-void Clock_Init()
-{
-  u_int8 i;
-  BCSCTL1&=~XT2OFF;
-  BCSCTL2|=SELM1+SELS + DIVS_2;
-  do{
-    IFG1&=~OFIFG;
-    for(i=0;i<100;i++)
-       _NOP();
-  }
-  while((IFG1&OFIFG)!=0);
-  IFG1&=~OFIFG; 
-}
-
-
 void main(void)
 {
   u_int8 str[20]; 
   u_int8 i;
   u_int32 u32result = 0;
-  
+  float Vref = 1.00;    //基准电压1.00
+  float Vin = 0.0;
+    
   WDTCTL = WDTPW + WDTHOLD;
   
-#if 1
    //系统时钟初始化
     BCSCTL1 &=~ XT2OFF;                 //打开XT振荡器 ;基本时钟系统控制寄存器1
     IE1 &= ~OFIE;
@@ -43,19 +29,7 @@ void main(void)
     
     BCSCTL2 |= SELM_2;                //MCLK = XT2CLK = 8MHz
     BCSCTL2|= SELM_2 + SELS + DIVS_2; //XT2CLK = 8MHz, SMCLK from XT2CLK/4 = 2MHz
-#endif 
 
-#if 0
-     BCSCTL1 &= ~XT2OFF;
-     do{
-        IFG1 &= ~OFIFG;d
-        for(i=255; i>0; i--);
-     }while( (IFG1 &OFIFG) != 0 );
-     BCSCTL2 = SELM_2 + SELS + DIVS_2;
-    
-#endif    
-   
-   //Clock_Init();       
    //串口初始化
    Uart0Init();       
 
@@ -76,32 +50,40 @@ void main(void)
     P1DIR |= BIT4;
 
     //开总中断
-    _EINT();
-    
-    //启动测量
-    TimerA_reset();
-    
+    _EINT();    
     while(1)
     {
-     // while( 1 == u8isMeasuring );    //一次转换完成
-      
+      //清除上次测量结果
+      u16end_CCR2 = 0;
+      u16start_CCR2 = 0;
+      u16ovCnt_TAR = 0;
+      //启动测量
+      TimerA_reset();
+      //等待测量完成
+      while( 1 == u8isMeasuring );    
+      //关闭测量
+      TimerA_stop();
+      //计算测量结果
       if(0 == u16ovCnt_TAR)
       {
         u32result = u16end_CCR2 - u16start_CCR2;
       }else{
         u32result = u16end_CCR2 + (65536L-u16start_CCR2) + 65536L*u16ovCnt_TAR;
       }
-      u16end_CCR2 = 0;
-      u16start_CCR2 = 0;
-      u16ovCnt_TAR = 0;
+      //计算结果
       
-//      delay_ms(500);
-//      u32result = 23246; 
-      sprintf((char *)str,"%ld", u32result );
-      Uart0StrSnd(str);
-      while(TXBUF_SNDING == u8TxbufStat);//等待发送完成
-      Uart0CharSnd('\n');
-      while(TXBUF_SNDING == u8TxbufStat);
+      if(u32result >= 10000)
+        Vin = (u32result - 10000) * Vref / 10000;
+        
+      //测量结果输出到串口
+      if( u32result )
+      {
+        sprintf((char *)str,"%f", Vin );
+        Uart0StrSnd(str);
+        while(TXBUF_SNDING == u8TxbufStat);//等待发送完成
+        Uart0CharSnd('\n');
+        while(TXBUF_SNDING == u8TxbufStat);      
+      }
     }
     
 }//end main()
