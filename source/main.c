@@ -6,6 +6,8 @@
 #include "Lib.h"
 #include "TimerAinit.h"
 #include <stdlib.h>
+#include "db18b20.h"
+
 
 void main(void)
 {

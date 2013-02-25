@@ -1889,6 +1889,9 @@
       <name>$PROJ_DIR$\source\Com.c</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\source\db18b20.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\source\Lib.c</name>
     </file>
     <file>
