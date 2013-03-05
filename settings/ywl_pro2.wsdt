@@ -32,7 +32,7 @@
             <Factory>Workspace</Factory>
             <Session>
               
-            <NodeDict><ExpandedNode>ywl_pro2</ExpandedNode><ExpandedNode>ywl_pro2/Output</ExpandedNode><ExpandedNode>ywl_pro2/doc</ExpandedNode><ExpandedNode>ywl_pro2/source</ExpandedNode></NodeDict></Session>
+            <NodeDict><ExpandedNode>ywl_pro2</ExpandedNode><ExpandedNode>ywl_pro2/source</ExpandedNode></NodeDict></Session>
           </Tab>
         </Tabs>
         
@@ -44,7 +44,7 @@
             <Factory>Build</Factory>
             <Session/>
           </Tab>
-        <Tab><Identity>TabID-23747-14546</Identity><TabName>Debug Log</TabName><Factory>Debug-Log</Factory><Session/></Tab></Tabs>
+        <Tab><Identity>TabID-30231-4424</Identity><TabName>Debug Log</TabName><Factory>Debug-Log</Factory><Session/></Tab></Tabs>
         
       <SelectedTab>0</SelectedTab></Wnd3></Windows>
     <Editor>
@@ -52,14 +52,14 @@
       
       
       
-    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\source\main.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>186</SelStart><SelEnd>186</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\source\db18b20.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>82</SelStart><SelEnd>82</SelEnd></Tab><ActiveTab>1</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\source\db18b20.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>18</SelStart><SelEnd>18</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\source\main.c</Filename><XPos>0</XPos><YPos>61</YPos><SelStart>1584</SelStart><SelEnd>1584</SelEnd></Tab><ActiveTab>0</ActiveTab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
     <Positions>
       
       
       
       
       
-    <Top><Row0><Sizes><Toolbar-01366780><key>iaridepm.enu1</key></Toolbar-01366780></Sizes></Row0></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>657</Bottom><Right>311</Right><x>-2</x><y>-2</y><xscreen>392</xscreen><yscreen>250</yscreen><sizeHorzCX>306250</sizeHorzCX><sizeHorzCY>341530</sizeHorzCY><sizeVertCX>244531</sizeVertCX><sizeVertCY>900273</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>30</Bottom><Right>1282</Right><x>-2</x><y>-2</y><xscreen>1284</xscreen><yscreen>32</yscreen><sizeHorzCX>1003125</sizeHorzCX><sizeHorzCY>43716</sizeHorzCY><sizeVertCX>306250</sizeVertCX><sizeVertCY>341530</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+    <Top><Row0><Sizes><Toolbar-01366758><key>iaridepm.enu1</key></Toolbar-01366758></Sizes></Row0><Row1><Sizes/></Row1><Row2><Sizes/></Row2><Row3><Sizes/></Row3><Row4><Sizes/></Row4><Row5><Sizes/></Row5><Row6><Sizes/></Row6><Row7><Sizes/></Row7><Row8><Sizes/></Row8></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>554</Bottom><Right>311</Right><x>-2</x><y>-2</y><xscreen>392</xscreen><yscreen>250</yscreen><sizeHorzCX>306250</sizeHorzCX><sizeHorzCY>341530</sizeHorzCY><sizeVertCX>244531</sizeVertCX><sizeVertCY>759563</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>133</Bottom><Right>1282</Right><x>-2</x><y>-2</y><xscreen>1284</xscreen><yscreen>135</yscreen><sizeHorzCX>1003125</sizeHorzCX><sizeHorzCY>184426</sizeHorzCY><sizeVertCX>306250</sizeVertCX><sizeVertCY>341530</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
   </Desktop>
 </Workspace>
 

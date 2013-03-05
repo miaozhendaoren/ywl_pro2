@@ -18,7 +18,7 @@ NextState1=0
 Break=2
 State Storage=2
 [DebugChecksum]
-Checksum=-514603217
+Checksum=-328149476
 [CallStack]
 ShowArgs=0
 [Disassembly]
@@ -80,9 +80,10 @@ SR=0
 all registers=0
 File name=
 [Aliases]
-A0=_ "E:\setup\project\ywl_pro2\source\Com.c" ""
-A1=_ "E:\setup\project\ywl_pro2\source\TimerAinit.c" ""
-A2=_ "G:\11-project\ywl_pro2\source\Com.c" ""
-A3=_ "G:\11-project\ywl_pro2\source\TimerAinit.c" ""
-Count=4
-SuppressDialog=0
+A0=_ "D:\我的文档\GitHub\git_pro\source\Com.c" "D:\我的文档\GitHub\ywl_pro2\source\Com.c"
+A1=_ "E:\setup\project\ywl_pro2\source\Com.c" ""
+A2=_ "E:\setup\project\ywl_pro2\source\TimerAinit.c" ""
+A3=_ "G:\11-project\ywl_pro2\source\Com.c" ""
+A4=_ "G:\11-project\ywl_pro2\source\TimerAinit.c" ""
+Count=5
+SuppressDialog=1

@@ -31,21 +31,18 @@ void main(void)
     
     BCSCTL2 |= SELM_2;                //MCLK = XT2CLK = 8MHz
     BCSCTL2|= SELM_2 + SELS + DIVS_2; //XT2CLK = 8MHz, SMCLK from XT2CLK/4 = 2MHz
-
+       
    //串口初始化
    Uart0Init();       
 
-   
+ 
    //特殊功能IO初始化
-    /* P1.1 ----> CCI0A input BIT1
-    ** P1.2 ----> CCI1A input BIT2
+    /*
     ** P1.3 ----> CCI2A input BIT3
     */      
-    /* P1.1 ----> TA0 Out0    BIT1
-    ** P1.2 ----> TA1 Out1    BIT2 
-    ** P1.3 ----> TA2 Out2    BIT3
+    /* P1.4 脉冲输出
     */
-    /*  P1.2 OUT 125K脉冲输出, P1.3  IN  busy引脚捕获输入  */
+    /*  P1.4 OUT 125K脉冲输出, P1.3  IN  busy引脚捕获输入  */
     P1SEL |= BIT2 + BIT3 + BIT4;
     P1DIR |= BIT2; 
     P1DIR &= ~BIT3;
@@ -76,16 +73,28 @@ void main(void)
       
       if(u32result >= 10000)
         Vin = (u32result - 10000) * Vref / 10000;
-        
-      //测量结果输出到串口
+     //测量结果输出到串口
+      if(u32result)
+      {
+        sprintf((char *)str,"%f", Vin);
+        Uart0StrSnd(str);
+        while(TXBUF_SNDING == u8TxbufStat);//等待发送完成
+        Uart0CharSnd('\n');
+        while(TXBUF_SNDING == u8TxbufStat);            
+      }
+      
+      //DB18B20结果输出到串口
+      u32result = 0;
+      u32result = Do1Convert();      
       if( u32result )
       {
-        sprintf((char *)str,"%f", Vin );
+        sprintf((char *)str,"%f", u32result*0.062);
         Uart0StrSnd(str);
         while(TXBUF_SNDING == u8TxbufStat);//等待发送完成
         Uart0CharSnd('\n');
         while(TXBUF_SNDING == u8TxbufStat);      
       }
+      
     }
     
 }//end main()

@@ -1892,6 +1892,9 @@
       <name>$PROJ_DIR$\source\db18b20.c</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\source\debug_list.txt</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\source\Lib.c</name>
     </file>
     <file>
