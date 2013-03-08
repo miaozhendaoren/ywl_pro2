@@ -8,16 +8,13 @@
 #include <stdlib.h>
 #include "db18b20.h"
 #include "i2c.h"
-
+#include "PCF8562.h"
+#include "PCF8563.h"
 
 void main(void)
 {
   u_int8 str[20]; 
-  u_int8 i;
-  u_int32 u32result = 0;
-  float Vref = 1.00;    //基准电压1.00
-  float Vin = 0.0;
-    
+  u_int8 i;    
   WDTCTL = WDTPW + WDTHOLD;
   
    //系统时钟初始化
@@ -50,50 +47,18 @@ void main(void)
 
     //开总中断
     _EINT();    
+    delay_ms(100);
+    PCF8562_init();
+ 
+    str[0] = 0xff;
+    str[1] = 0xff;
+    str[2] = 0xff;
+    str[3] = 0xff;
     while(1)
     {
-      //清除上次测量结果
-      u16end_CCR2 = 0;
-      u16start_CCR2 = 0;
-      u16ovCnt_TAR = 0;
-      //启动测量
-      TimerA_reset();
-      //等待测量完成
-      while( 1 == u8isMeasuring );    
-      //关闭测量
-      TimerA_stop();
-      //计算测量结果
-      if(0 == u16ovCnt_TAR)
-      {
-        u32result = u16end_CCR2 - u16start_CCR2;
-      }else{
-        u32result = u16end_CCR2 + (65536L-u16start_CCR2) + 65536L*u16ovCnt_TAR;
-      }
-      //计算结果
+      delay_ms(200);
+      PCF8562_disStr(str,3);
       
-      if(u32result >= 10000)
-        Vin = (u32result - 10000) * Vref / 10000;
-     //测量结果输出到串口
-      if(u32result)
-      {
-        sprintf((char *)str,"%f", Vin);
-        Uart0StrSnd(str);
-        while(TXBUF_SNDING == u8TxbufStat);//等待发送完成
-        Uart0CharSnd('\n');
-        while(TXBUF_SNDING == u8TxbufStat);            
-      }
-      
-      //DB18B20结果输出到串口
-      u32result = 0;
-      u32result = Do1Convert();      
-      if( u32result )
-      {
-        sprintf((char *)str,"%f", u32result*0.062);
-        Uart0StrSnd(str);
-        while(TXBUF_SNDING == u8TxbufStat);//等待发送完成
-        Uart0CharSnd('\n');
-        while(TXBUF_SNDING == u8TxbufStat);      
-      }
     }
     
 }//end main()

@@ -37,13 +37,18 @@ IICSTATE ge_iicState = eIIC_FREE;
 
 #if IIC_IO_SIM
 /*---------------------IO模拟IIC总线---------------------------*/
-#define IIC_PORT_DIR  P5DIR   //==SDA 接P5.1 ；SCL接 P5.0 
-#define IIC_PORT_IN   P5IN   
-#define IIC_PORT_OUT  P5OUT   
-#define SDA    BIT1   
-#define SCL    BIT0   
-#define SDA_1  (IIC_PORT_DIR &= ~SDA)  //数据总线默认为1，设置SDA为输入口则SDA=1   
-#define SDA_0  (IIC_PORT_DIR |= SDA)   //SDA输出寄存器始终为0，当设置SDA为输出口 SDA=0   
+#define IIC_PORT_DIR  P2DIR
+#define IIC_PORT_IN   P2IN   
+#define IIC_PORT_OUT  P2OUT   
+
+#define SDA    BIT6   
+#define SCL    BIT7  
+#define SDA_in  (IIC_PORT_DIR &= ~SDA)
+#define SDA_out (IIC_PORT_DIR |= SDA)
+#define SDA_1  (IIC_PORT_OUT |= SDA)
+#define SDA_0  (IIC_PORT_OUT &= SDA)
+
+#define SCL_out (IIC_PORT_DIR |= SCL)
 #define SCL_1  (IIC_PORT_OUT |=SCL)   
 #define SCL_0  (IIC_PORT_OUT &=~SCL)   
 #define IIC_TIME 100   
@@ -54,9 +59,10 @@ IICSTATE ge_iicState = eIIC_FREE;
 ********************************************************************/   
 void iic_init(void)   
 {   
- IIC_PORT_DIR |= (SCL);   
- SDA_1;                  //总线SDA有上拉电阻,当前SDA为输入口时, CPU读到的SDA = 1；
- IIC_PORT_OUT &= ~SDA;   //SDA输出寄存器始终为0，当设置SDA为输出口  总线实际输出SDA=0   
+ SCL_0;
+ SCL_out;
+ SDA_1;
+ SDA_out;
 }   
 /*******************************************************************  
                      起动总线函数                 
@@ -66,7 +72,8 @@ void iic_init(void)
 void iic_start(void)   
 {   
  SDA_1; delay_us(IIC_TIME);   
- SCL_1; delay_us(IIC_TIME);   
+ SCL_1; delay_us(IIC_TIME);
+
  SDA_0; delay_us(IIC_TIME);   
  SCL_0; delay_us(IIC_TIME);   
 }   
@@ -93,8 +100,10 @@ void  iic_SndByte(u_int8  ch)
  SCL_0; delay_us(IIC_TIME);     
  while(i--)   
  {   
-  SDA_0;       
-  if(ch & 0x80)SDA_1;   
+  if(ch & 0x80)
+    SDA_1;   
+  else
+    SDA_0;
   ch <<= 1;   
   delay_us(IIC_TIME);     
   SCL_1; delay_us(IIC_TIME);     
@@ -109,7 +118,7 @@ u_int8  iic_RcvByte(void)
 {   
  u_int8 rdata = 0;   
  u_int8 i = 8;   
- SDA_1;            // 改成输入模式   
+ SDA_in;
  delay_us(IIC_TIME);   
  while(i--)   
  {   
@@ -120,6 +129,7 @@ u_int8  iic_RcvByte(void)
  }   
  SCL_0;       
  delay_us(IIC_TIME);   
+
  return(rdata);   
 }   
    
@@ -129,7 +139,7 @@ u_int8  iic_RcvByte(void)
 ***************************************************************/
 void iic_master_ack(void)
 {   
- SDA_0; delay_us(IIC_TIME);   
+ SDA_0; SDA_out;delay_us(IIC_TIME);   
  SCL_1; delay_us(IIC_TIME);   
  SCL_0; delay_us(IIC_TIME);   
 }   
@@ -140,7 +150,7 @@ void iic_master_ack(void)
 ***************************************************************/
 void iic_master_nack(void)
 {   
- SDA_1; delay_us(IIC_TIME);   
+ SDA_1; SDA_out; delay_us(IIC_TIME);   
  SCL_1; delay_us(IIC_TIME);     
  SCL_0; delay_us(IIC_TIME);     
 }   
@@ -150,12 +160,14 @@ void iic_master_nack(void)
 ***************************************************************/   
 u_int8 iic_isSlaveAck(void)   
 {   
- u_int8 a;   
- SDA_1;                   //设为输入,通过上拉电阻释放SDA
+ u_int8 a;  
+ SDA_in; 
  SCL_1;                   //产生应答时钟
  delay_us(IIC_TIME);
  a=IIC_PORT_IN &SDA;
  SCL_0;
+ SDA_1;
+ SDA_out;       //总线空闲期间默认SDA_1
  return(a);    
 }  
 

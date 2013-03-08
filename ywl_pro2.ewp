@@ -1904,6 +1904,12 @@
       <name>$PROJ_DIR$\source\main.c</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\source\PCF8562.c</name>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\source\PCF8563.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\source\TimerAinit.c</name>
     </file>
   </group>
