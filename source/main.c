@@ -1,12 +1,13 @@
 #include "msp430f149.h"
 #include "alldefs.h"
-#include "Com.h"
 #include "BoardConfig.h"
+#include "Com.h"
 #include <stdio.h>
 #include "Lib.h"
 #include "TimerAinit.h"
 #include <stdlib.h>
 #include "db18b20.h"
+#include "i2c.h"
 
 
 void main(void)
@@ -35,7 +36,6 @@ void main(void)
    //串口初始化
    Uart0Init();       
 
- 
    //特殊功能IO初始化
     /*
     ** P1.3 ----> CCI2A input BIT3
@@ -94,7 +94,6 @@ void main(void)
         Uart0CharSnd('\n');
         while(TXBUF_SNDING == u8TxbufStat);      
       }
-      
     }
     
 }//end main()
