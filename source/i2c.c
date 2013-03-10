@@ -43,12 +43,10 @@ IICSTATE ge_iicState = eIIC_FREE;
 
 #define SDA    BIT6   
 #define SCL    BIT7  
-#define SDA_in  (IIC_PORT_DIR &= ~SDA)
-#define SDA_out (IIC_PORT_DIR |= SDA)
-#define SDA_1  (IIC_PORT_OUT |= SDA)
-#define SDA_0  (IIC_PORT_OUT &= SDA)
 
-#define SCL_out (IIC_PORT_DIR |= SCL)
+#define SDA_1  (IIC_PORT_DIR &= ~SDA)
+#define SDA_0  (IIC_PORT_DIR |= SDA)
+
 #define SCL_1  (IIC_PORT_OUT |=SCL)   
 #define SCL_0  (IIC_PORT_OUT &=~SCL)   
 #define IIC_TIME 100   
@@ -59,10 +57,12 @@ IICSTATE ge_iicState = eIIC_FREE;
 ********************************************************************/   
 void iic_init(void)   
 {   
- SCL_0;
- SCL_out;
- SDA_1;
- SDA_out;
+ SCL_1;
+ IIC_PORT_DIR |= SCL ;
+ 
+ SDA_1;  //SDA线置为高电平、
+ IIC_PORT_OUT &= ~SDA;  // SDA_430内部预设为低电平
+ 
 }   
 /*******************************************************************  
                      起动总线函数                 
@@ -88,7 +88,7 @@ void iic_stop(void)
  SDA_0; delay_us(IIC_TIME);   
  SCL_1; delay_us(IIC_TIME);   
  SDA_1; delay_us(IIC_TIME);   
- SCL_0; delay_us(IIC_TIME);   
+ SCL_1; delay_us(IIC_TIME);   //???
 }   
 /*******************************************************************  
 名称: void  iic_SndByte(u_int8 ch);  
@@ -117,8 +117,8 @@ void  iic_SndByte(u_int8  ch)
 u_int8  iic_RcvByte(void)   
 {   
  u_int8 rdata = 0;   
- u_int8 i = 8;   
- SDA_in;
+ u_int8 i = 8; 
+ SDA_1;     //SDA置为输入
  delay_us(IIC_TIME);   
  while(i--)   
  {   
@@ -139,7 +139,7 @@ u_int8  iic_RcvByte(void)
 ***************************************************************/
 void iic_master_ack(void)
 {   
- SDA_0; SDA_out;delay_us(IIC_TIME);   
+ SDA_0; delay_us(IIC_TIME);   
  SCL_1; delay_us(IIC_TIME);   
  SCL_0; delay_us(IIC_TIME);   
 }   
@@ -150,7 +150,7 @@ void iic_master_ack(void)
 ***************************************************************/
 void iic_master_nack(void)
 {   
- SDA_1; SDA_out; delay_us(IIC_TIME);   
+ SDA_1; delay_us(IIC_TIME);   
  SCL_1; delay_us(IIC_TIME);     
  SCL_0; delay_us(IIC_TIME);     
 }   
@@ -161,13 +161,12 @@ void iic_master_nack(void)
 u_int8 iic_isSlaveAck(void)   
 {   
  u_int8 a;  
- SDA_in; 
- SCL_1;                   //产生应答时钟
+ SDA_1;                   //SDA置为输入
  delay_us(IIC_TIME);
+ SCL_1;                   //产生应答时钟
  a=IIC_PORT_IN &SDA;
  SCL_0;
  SDA_1;
- SDA_out;       //总线空闲期间默认SDA_1
  return(a);    
 }  
 

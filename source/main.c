@@ -26,10 +26,10 @@ void main(void)
          _NOP();                      
     }while((IFG1&OFIFG)!=0);          //等待震荡稳定   
     IFG1&=~OFIFG;                     //清除震荡标志;
-    
     BCSCTL2 |= SELM_2;                //MCLK = XT2CLK = 8MHz
     BCSCTL2|= SELM_2 + SELS + DIVS_2; //XT2CLK = 8MHz, SMCLK from XT2CLK/4 = 2MHz
-       
+
+    ConfigBoard(0x80);
    //串口初始化
    Uart0Init();       
 
@@ -47,17 +47,19 @@ void main(void)
 
     //开总中断
     _EINT();    
+
+   if ( 0 == PCF8562_init())
+     while(1);
     delay_ms(100);
-    PCF8562_init();
- 
+    
     str[0] = 0xff;
-    str[1] = 0xff;
+    str[1] = 0x55;
     str[2] = 0xff;
-    str[3] = 0xff;
+    str[3] = 0x55;
     while(1)
     {
-      delay_ms(200);
-      PCF8562_disStr(str,3);
+      delay_ms(2);
+      PCF8562_disStr(str,4);
       
     }
     

@@ -23,6 +23,7 @@ u_int8  PCF8562_init(void)
     if( 0 == iic_isSlaveAck() )
     {//PCF8562ŒﬁœÏ”¶
       iic_stop();
+      while(1);
       return (0);
     }
     

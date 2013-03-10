@@ -18,7 +18,7 @@ NextState1=0
 Break=2
 State Storage=2
 [DebugChecksum]
-Checksum=-328149476
+Checksum=-45689234
 [CallStack]
 ShowArgs=0
 [Disassembly]
@@ -44,10 +44,6 @@ ActionState=1
 [Trace1]
 Enabled=0
 ShowSource=1
-[Log file]
-LoggingEnabled=_ 0
-LogFile=_ ""
-Category=_ 0
 [TermIOLog]
 LoggingEnabled=_ 0
 LogFile=_ ""
@@ -58,6 +54,10 @@ Enabled=0
 Mode=0
 Graph=0
 Symbiont=0
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
 [Breakpoints]
 Count=0
 [FET]
