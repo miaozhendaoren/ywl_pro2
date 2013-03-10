@@ -10,11 +10,12 @@
 #include "i2c.h"
 #include "PCF8562.h"
 #include "PCF8563.h"
+#include "FM24CL64.h"
 
 void main(void)
 {
-  u_int8 str[20]; 
-  u_int8 i;    
+  unsigned long long_i;
+  u_int8 i,j;    
   WDTCTL = WDTPW + WDTHOLD;
   
    //系统时钟初始化
@@ -29,7 +30,9 @@ void main(void)
     BCSCTL2 |= SELM_2;                //MCLK = XT2CLK = 8MHz
     BCSCTL2|= SELM_2 + SELS + DIVS_2; //XT2CLK = 8MHz, SMCLK from XT2CLK/4 = 2MHz
 
-    ConfigBoard(0x80);
+    //开发板配置
+//    ConfigBoard(0xb8);
+    
    //串口初始化
    Uart0Init();       
 
@@ -45,22 +48,39 @@ void main(void)
     P1DIR &= ~BIT3;
     P1DIR |= BIT4;
 
+    
+    //I2C总线初始化
+    Init_I2c();
+    PCF8562_init();
+    
+    delay_ms(100);
+    //PCF8562初始化
+    
     //开总中断
     _EINT();    
 
-   if ( 0 == PCF8562_init())
-     while(1);
-    delay_ms(100);
-    
-    str[0] = 0xff;
-    str[1] = 0x55;
-    str[2] = 0xff;
-    str[3] = 0x55;
+    long_i = 0x00000000;
     while(1)
     {
-      delay_ms(2);
-      PCF8562_disStr(str,4);
-      
+      for(j=0; j<=32; j++)
+      {
+          long_i = 0x80000000 >> j;
+          PCF8562_disStr((u_int8*)(&long_i),0x00, 4);
+          delay_ms(800);
+      }
+      long_i = 0xffffffff;
+      PCF8562_disStr((u_int8 *)(&long_i),0x00,4);
+      delay_ms(800);
+      for(j=0; j<=32; j++)
+      {
+          long_i = 0x7fffffff >> j;
+          PCF8562_disStr((u_int8*)(&long_i),0x00, 4);
+          delay_ms(800);
+      }
+      long_i = 0xffffffff;
+      PCF8562_disStr((u_int8 *)(&long_i),0x00,4);
+      delay_ms(800);
+
     }
     
 }//end main()

@@ -4,7 +4,6 @@
 #include "msp430f149.h"
 #include "BoardConfig.h"
 
-uint8 u8BoardCTL;            //开发板控制字,存储当前开发板的配置状态
 void ConfigBoard(uint8 u8BoardCtl);
                              // 开发板 配置 函数，调用此函数 配置 开发板
 

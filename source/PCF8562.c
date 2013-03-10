@@ -13,72 +13,30 @@
 **************************************************************/
 u_int8  PCF8562_init(void)
 { 
-    //初始化iic硬件端口
-    iic_init();
-
-    iic_start();
-    //发送 PCF8562 IIC地址
-    iic_SndByte(IICADDR8562);
-    
-    if( 0 == iic_isSlaveAck() )
-    {//PCF8562无响应
-      iic_stop();
-      while(1);
-      return (0);
-    }
-    
     //方式设定: 允许显示、偏置1/2、静态
-    iic_SndByte(0x4d);  //0 1 0 0 1 1  0  1
-                        //C 1 0 x E B M1 M0
-    if( 0 == iic_isSlaveAck() )
-    {
-      iic_stop();
-      return(0);
-    }
-    
-    iic_stop();
-    return(1);
+    //0 1 0 0 1 1  0  1
+    //C 1 0 x E B M1 M0
+  
+  u_int8 initCode[2] = {IICADDR8562, 0x4d};
+  if( ISendStr(IICADDR8562,0x4d,&initCode[0],0) )
+    return (1);
+  else
+  {//    while(1);
+       return (0);
+  }
 }
 
 /**************************************************************
-名称：u_int8  PCF8562_disStr(u_int8 *buf, u_int8 num )
-功能：PCF8562显示字符串,返回PCF8562接收的字节个数,num为字节个数，
-              buf为显示缓冲区
+名称：u_int8  PCF8562_disStr(u_int8 *buf, u_int8 start_addr u_int8 num )
+功能：PCF8562显示字符串, start_addr 为PCF8562开始显示的bit位序号, num为要显示的字节个数
+返回： 成功返回1，否则返回0
 **************************************************************/
-u_int8  PCF8562_disStr(u_int8 *buf, u_int8 num )
+u_int8  PCF8562_disStr(u_int8 *buf, u_int8 start_addr, u_int8 num  )
 {
-  u_int8 i = 0;
-
-  if( num > 4 )
-      return 0;
-  
-    iic_init();
-    iic_start();
-    iic_SndByte(IICADDR8562);
-    if( 0 == iic_isSlaveAck() )
-    {//PCF8562无响应
-      iic_stop();
-      return (i);
-    }
-
-    iic_SndByte(0x00);  //从地址指针0开始
-    if( 0 == iic_isSlaveAck() )
-    {//PCF8562无响应
-      iic_stop();
-      return (i);
-    }        
-    for( ; num; num--)
-    {
-      iic_SndByte(buf[i]);
-      if( 0 == iic_isSlaveAck() )
-      {
-        iic_stop();
-        return(i);
-      }
-      i++;
-    }
-    
-    iic_stop();
-    return (i);   
+  start_addr = start_addr & 0x3f; //最高两位 C 0 P5 P4 P3 P2 P1 P0
+  if( ISendStr(IICADDR8562, start_addr, buf, num) )
+    return (1);
+  else
+    return (0);
 }
 

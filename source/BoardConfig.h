@@ -25,7 +25,6 @@
 /*************************************************************************/
 #else                                       //外部引用开始---------
 
-extern uint8 u8BoardCTL;
 extern void ConfigBoard(uint8 u8BoardCtl);
 
 
