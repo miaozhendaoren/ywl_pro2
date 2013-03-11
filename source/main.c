@@ -9,6 +9,7 @@
 #include "db18b20.h"
 #include "i2c.h"
 #include "PCF8562.h"
+#include "segLcd.h"
 #include "PCF8563.h"
 #include "FM24CL64.h"
 

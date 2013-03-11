@@ -1913,6 +1913,9 @@
       <name>$PROJ_DIR$\source\PCF8563.c</name>
     </file>
     <file>
+      <name>$PROJ_DIR$\source\segLcd.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\source\TimerAinit.c</name>
     </file>
   </group>

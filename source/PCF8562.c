@@ -21,9 +21,7 @@ u_int8  PCF8562_init(void)
   if( ISendStr(IICADDR8562,0x4d,&initCode[0],0) )
     return (1);
   else
-  {//    while(1);
-       return (0);
-  }
+    return (0);
 }
 
 /**************************************************************
@@ -39,4 +37,3 @@ u_int8  PCF8562_disStr(u_int8 *buf, u_int8 start_addr, u_int8 num  )
   else
     return (0);
 }
-
