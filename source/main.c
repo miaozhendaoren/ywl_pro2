@@ -13,11 +13,11 @@
 #include "PCF8563.h"
 #include "FM24CL64.h"
 
-void main(void)
+ void main(void)
 {
-  unsigned long long_i;
-  u_int8 i,j;    
-  WDTCTL = WDTPW + WDTHOLD;
+    u_int8 i;
+
+    WDTCTL = WDTPW + WDTHOLD;
   
    //系统时钟初始化
     BCSCTL1 &=~ XT2OFF;                 //打开XT振荡器 ;基本时钟系统控制寄存器1
@@ -59,29 +59,10 @@ void main(void)
     
     //开总中断
     _EINT();    
-
-    long_i = 0x00000000;
     while(1)
     {
-      for(j=0; j<=32; j++)
-      {
-          long_i = 0x80000000 >> j;
-          PCF8562_disStr((u_int8*)(&long_i),0x00, 4);
-          delay_ms(800);
-      }
-      long_i = 0xffffffff;
-      PCF8562_disStr((u_int8 *)(&long_i),0x00,4);
-      delay_ms(800);
-      for(j=0; j<=32; j++)
-      {
-          long_i = 0x7fffffff >> j;
-          PCF8562_disStr((u_int8*)(&long_i),0x00, 4);
-          delay_ms(800);
-      }
-      long_i = 0xffffffff;
-      PCF8562_disStr((u_int8 *)(&long_i),0x00,4);
-      delay_ms(800);
-
+        CycleTask_SegDis();
+        delay_ms(800);
+        MakeDisBuf( 102, DIS_NONE, BLK_NONE );
     }
-    
 }//end main()
