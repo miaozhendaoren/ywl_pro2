@@ -6,146 +6,100 @@
   <configuration>
     <name>Debug</name>
     <outputs>
-      <file>$PROJ_DIR$\Debug\Obj\BoardConfig.r43</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\TimerAinit.pbi</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\ymath.h</file>
-      <file>$PROJ_DIR$\source\Lcd1602.c</file>
-      <file>$TOOLKIT_DIR$\inc\msp430f149.h</file>
-      <file>$TOOLKIT_DIR$\lib\dlib\dl430fn.r43</file>
-      <file>$PROJ_DIR$\Debug\Obj\PCF8562.pbi</file>
-      <file>$TOOLKIT_DIR$\inc\in430.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\Lcd1602.pbi</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
-      <file>$PROJ_DIR$\source\PCF8562.h</file>
-      <file>$PROJ_DIR$\source\db18b20.h</file>
-      <file>$PROJ_DIR$\source\i2c.c</file>
-      <file>$PROJ_DIR$\source\FM24CL64.c</file>
-      <file>$PROJ_DIR$\Debug\Obj\TimerAinit.r43</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\main.r43</file>
-      <file>$PROJ_DIR$\Debug\Obj\segLcd.pbi</file>
+      <file>$PROJ_DIR$\source\TimerAinit.c</file>
       <file>$PROJ_DIR$\source\PCF8563.c</file>
+      <file>$PROJ_DIR$\source\PCF8562.c</file>
+      <file>$PROJ_DIR$\source\i2c.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\FM24CL64.r43</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
+      <file>$TOOLKIT_DIR$\lib\dlib\dl430fn.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\i2c.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\Lcd1602.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\FM24CLXX.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\Com.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ystdio.h</file>
+      <file>$PROJ_DIR$\source\FM24CL64.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\TimerAinit.pbi</file>
+      <file>$TOOLKIT_DIR$\lib\dlib\dl430fn.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.r43</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\PCF8563.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ymath.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\stdlib.h</file>
+      <file>$PROJ_DIR$\source\Lib.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\segLcd.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Threads.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\PCF8563.r43</file>
+      <file>$PROJ_DIR$\source\PCF8563.h</file>
+      <file>$TOOLKIT_DIR$\inc\msp430f149.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\segLcd.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\Lib.r43</file>
+      <file>$PROJ_DIR$\source\Com.h</file>
+      <file>$PROJ_DIR$\source\Lcd1602.c</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\math.h</file>
+      <file>$PROJ_DIR$\Debug\Exe\ywl_pro2.txt</file>
+      <file>$PROJ_DIR$\source\segLcd.c</file>
+      <file>$PROJ_DIR$\source\main.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\i2c.pbi</file>
+      <file>$PROJ_DIR$\source\PCF8562.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\db18b20.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\FM24CL64.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\BoardConfig.pbi</file>
+      <file>$PROJ_DIR$\source\alldefs.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\PCF8562.r43</file>
+      <file>$PROJ_DIR$\source\BoardConfig.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\Lcd1602.r43</file>
+      <file>$TOOLKIT_DIR$\inc\in430.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\BoardConfig.r43</file>
+      <file>$PROJ_DIR$\Debug\Exe\ywl_pro2.d43</file>
+      <file>$PROJ_DIR$\Debug\Obj\ywl_pro2.pbd</file>
       <file>$TOOLKIT_DIR$\inc\dlib\c\xtgmath.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\Com.r43</file>
+      <file>$TOOLKIT_DIR$\config\lnk430F149.xcl</file>
+      <file>$TOOLKIT_DIR$\config\multiplier.xcl</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\stdio.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\Lib.pbi</file>
+      <file>$PROJ_DIR$\source\FM24CLXX.c</file>
+      <file>$PROJ_DIR$\source\i2c.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Product.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\PCF8562.pbi</file>
+      <file>$PROJ_DIR$\source\db18b20.h</file>
+      <file>$PROJ_DIR$\source\segLcd.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\db18b20.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\TimerAinit.r43</file>
+      <file>$PROJ_DIR$\source\Lib.h</file>
+      <file>$PROJ_DIR$\source\Lcd1602.h</file>
+      <file>$PROJ_DIR$\source\FM24CL64.c</file>
       <file>$PROJ_DIR$\source\db18b20.c</file>
       <file>$PROJ_DIR$\source\Com.c</file>
       <file>$PROJ_DIR$\source\BoardConfig.c</file>
-      <file>$PROJ_DIR$\source\Lib.c</file>
-      <file>$PROJ_DIR$\Debug\Obj\Com.r43</file>
-      <file>$PROJ_DIR$\source\segLcd.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\ywl_pro2.pbd</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\stdio.h</file>
-      <file>$PROJ_DIR$\source\segLcd.c</file>
-      <file>$PROJ_DIR$\source\main.c</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\ysizet.h</file>
       <file>$PROJ_DIR$\source\TimerAinit.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\PCF8563.r43</file>
-      <file>$PROJ_DIR$\source\i2c.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\i2c.r43</file>
-      <file>$PROJ_DIR$\Debug\Obj\PCF8563.pbi</file>
-      <file>$PROJ_DIR$\source\alldefs.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\Com.pbi</file>
-      <file>$PROJ_DIR$\Debug\Obj\Lcd1602.r43</file>
-      <file>$PROJ_DIR$\Debug\Obj\Lib.r43</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\yvals.h</file>
-      <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\FM24CLXX.pbi</file>
-      <file>$PROJ_DIR$\source\PCF8563.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\ystdio.h</file>
-      <file>$PROJ_DIR$\source\Lib.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\i2c.pbi</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\math.h</file>
-      <file>$PROJ_DIR$\source\FM24CL64.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\segLcd.r43</file>
-      <file>$TOOLKIT_DIR$\lib\dlib\dl430fn.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\BoardConfig.pbi</file>
-      <file>$PROJ_DIR$\source\FM24CLXX.c</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\stdlib.h</file>
-      <file>$PROJ_DIR$\Debug\Exe\ywl_pro2.d43</file>
-      <file>$PROJ_DIR$\Debug\Exe\ywl_pro2.txt</file>
-      <file>$TOOLKIT_DIR$\config\multiplier.xcl</file>
-      <file>$PROJ_DIR$\Debug\Obj\FM24CL64.r43</file>
-      <file>$PROJ_DIR$\Debug\Obj\FM24CL64.pbi</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\DLib_Defaults.h</file>
-      <file>$PROJ_DIR$\source\PCF8562.c</file>
-      <file>$PROJ_DIR$\source\TimerAinit.c</file>
-      <file>$PROJ_DIR$\Debug\Obj\db18b20.pbi</file>
-      <file>$PROJ_DIR$\source\Com.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\db18b20.r43</file>
-      <file>$TOOLKIT_DIR$\config\lnk430F149.xcl</file>
-      <file>$PROJ_DIR$\source\BoardConfig.h</file>
-      <file>$PROJ_DIR$\Debug\Obj\PCF8562.r43</file>
-      <file>$PROJ_DIR$\Debug\Obj\Lib.pbi</file>
-      <file>$PROJ_DIR$\source\Lcd1602.h</file>
-      <file>$TOOLKIT_DIR$\inc\dlib\c\ycheck.h</file>
+      <file>$TOOLKIT_DIR$\inc\dlib\c\xencoding_limits.h</file>
     </outputs>
     <file>
-      <name>$PROJ_DIR$\source\Lcd1602.c</name>
+      <name>$PROJ_DIR$\source\TimerAinit.c</name>
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 9</file>
+          <file> 13</file>
         </tool>
         <tool>
           <name>ICC430</name>
-          <file> 40</file>
+          <file> 64</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 38 5 8 43 68 71 47</file>
+          <file> 27 47 18 43</file>
         </tool>
         <tool>
           <name>ICC430</name>
-          <file> 38 5 8 43 68 71 47</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\source\i2c.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 48</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 36</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 38 5 8 43 35</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 38 5 8 43 35</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\source\FM24CL64.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 60</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 59</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 38 5 8 43 35 50</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 38 5 8 43 35 50</file>
+          <file> 27 47 18 43</file>
         </tool>
       </inputs>
     </file>
@@ -154,210 +108,21 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 37</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 34</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 5 8 43 38 45</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 5 8 43 38 45</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\source\db18b20.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 64</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 66</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 38 5 8 43 12</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 38 5 8 43 12</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\source\Com.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 39</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 26</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 38 5 8 43 65</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 38 5 8 43 65</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\source\BoardConfig.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 53</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 0</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 38 5 8 43 68</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 38 5 8 43 68</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\source\Lib.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 70</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 41</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 38 5 8 43 47 49 72 3 42 61 16 10 1 21</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 38 5 8 43 47 49 72 3 42 61 52 16 10 1 21</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Debug\Obj\ywl_pro2.pbd</name>
-      <inputs>
-        <tool>
-          <name>BILINK</name>
-          <file> 53 39 60 70 7 37 2 64 48 17 19</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\source\segLcd.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 19</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 51</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 38 5 8 43 11 27</file>
-        </tool>
-        <tool>
-          <name>ICC430</name>
-          <file> 38 5 8 43 11 27</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\source\main.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
           <file> 17</file>
         </tool>
         <tool>
           <name>ICC430</name>
-          <file> 18</file>
+          <file> 25</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 29 72 42 61 16 10 1 32 46 55 5 8 43 38 68 47 33 65 12 35 11 27 45 50</file>
+          <file> 27 47 18 43 26</file>
         </tool>
         <tool>
           <name>ICC430</name>
-          <file> 29 72 42 61 52 16 10 1 32 46 55 5 8 43 38 68 47 33 65 12 35 11 27 45 50</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\source\FM24CLXX.c</name>
-      <outputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 44</file>
-        </tool>
-      </outputs>
-      <inputs>
-        <tool>
-          <name>BICOMP</name>
-          <file> 38 5 8 43 35</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>[ROOT_NODE]</name>
-      <outputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 56</file>
-        </tool>
-      </outputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Debug\Exe\ywl_pro2.d43</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 67 58 0 26 59 41 69 34 15 66 36 18 51 6</file>
-        </tool>
-      </inputs>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\Debug\Exe\ywl_pro2.txt</name>
-      <inputs>
-        <tool>
-          <name>XLINK</name>
-          <file> 67 58 0 26 41 15 18 6</file>
+          <file> 27 47 18 43 26</file>
         </tool>
       </inputs>
     </file>
@@ -366,30 +131,140 @@
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 7</file>
+          <file> 60</file>
         </tool>
         <tool>
           <name>ICC430</name>
-          <file> 69</file>
+          <file> 44</file>
         </tool>
       </outputs>
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 5 8 43 38 35 11</file>
+          <file> 27 47 18 43 58 38</file>
         </tool>
         <tool>
           <name>ICC430</name>
-          <file> 5 8 43 38 35 11</file>
+          <file> 27 47 18 43 58 38</file>
         </tool>
       </inputs>
     </file>
     <file>
-      <name>$PROJ_DIR$\source\TimerAinit.c</name>
+      <name>$PROJ_DIR$\source\i2c.c</name>
       <outputs>
         <tool>
           <name>BICOMP</name>
-          <file> 2</file>
+          <file> 37</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 7</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 43 27 47 18 58</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 43 27 47 18 58</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 49</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\source\Lib.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 56</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 30</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 43 27 47 18 65 33 5 19 28 16 59 72 24 51</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 43 27 47 18 65 33 5 19 28 16 6 59 72 24 51</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\source\Lcd1602.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 8</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 46</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 43 27 47 18 45 66 65</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 43 27 47 18 45 66 65</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\ywl_pro2.txt</name>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 53 54 48 52 30 64 15 14</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\source\segLcd.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 22</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 29</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 43 27 47 18 38 62</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 43 27 47 18 38 62</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\source\main.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 40</file>
         </tool>
         <tool>
           <name>ICC430</name>
@@ -399,11 +274,136 @@
       <inputs>
         <tool>
           <name>BICOMP</name>
-          <file> 5 8 43 38</file>
+          <file> 55 5 28 16 59 72 24 23 11 20 27 47 18 43 45 65 71 31 61 58 38 62 26 12</file>
         </tool>
         <tool>
           <name>ICC430</name>
-          <file> 5 8 43 38</file>
+          <file> 55 5 28 16 6 59 72 24 23 11 20 27 47 18 43 45 65 71 31 61 58 38 62 26 12</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\ywl_pro2.d43</name>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 53 54 48 52 4 30 44 25 64 63 7 15 29 14</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Obj\ywl_pro2.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 42 10 41 56 60 17 13 39 37 40 22</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\source\FM24CLXX.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 9</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 43 27 47 18 58</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\source\FM24CL64.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 41</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 4</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 43 27 47 18 58 12</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 43 27 47 18 58 12</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\source\db18b20.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 39</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 63</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 43 27 47 18 61</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 43 27 47 18 61</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\source\Com.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 10</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 52</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 43 27 47 18 31</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 43 27 47 18 31</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\source\BoardConfig.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 42</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 48</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 43 27 47 18 45</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 43 27 47 18 45</file>
         </tool>
       </inputs>
     </file>
