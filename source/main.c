@@ -32,12 +32,16 @@ void main(void)
     BCSCTL2 |= SELM_2;                //MCLK = XT2CLK = 8MHz
     BCSCTL2|= SELM_2 + SELS + DIVS_2; //XT2CLK = 8MHz, SMCLK from XT2CLK/4 = 2MHz
 
-    //开总中断
+    //I2C总线初始化
+    Init_I2c();
+    MakeDisBuf(-1020,DIS_Dot, BLK_NONE);
+    
+    //开总中断    
     _EINT();    
     while(1)
     {
-
-       
+       CycleTask_SegDis();
+       delay_ms(1000);
 
     }
 }//end main()

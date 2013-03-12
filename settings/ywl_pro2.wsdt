@@ -12,7 +12,7 @@
           
           
           
-        <Column0>211</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+        <Column0>195</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
       </Workspace>
       <Build>
         
@@ -24,7 +24,7 @@
     <Windows>
       
       
-    <Wnd2>
+    <Wnd0>
         <Tabs>
           <Tab>
             <Identity>TabID-3881-9801</Identity>
@@ -32,11 +32,11 @@
             <Factory>Workspace</Factory>
             <Session>
               
-            <NodeDict><ExpandedNode>ywl_pro2</ExpandedNode><ExpandedNode>ywl_pro2/source</ExpandedNode><ExpandedNode>ywl_pro2/source/&#x516C;&#x5171;&#x5e93;</ExpandedNode><ExpandedNode>ywl_pro2/source/&#x9A71;&#x52A8;</ExpandedNode></NodeDict></Session>
+            <NodeDict><ExpandedNode>ywl_pro2</ExpandedNode><ExpandedNode>ywl_pro2/source</ExpandedNode><ExpandedNode>ywl_pro2/source/segLcd.c</ExpandedNode><ExpandedNode>ywl_pro2/source/&#x516C;&#x5171;&#x5e93;</ExpandedNode><ExpandedNode>ywl_pro2/source/&#x9A71;&#x52A8;</ExpandedNode></NodeDict></Session>
           </Tab>
         </Tabs>
         
-      <SelectedTab>0</SelectedTab></Wnd2><Wnd3>
+      <SelectedTab>0</SelectedTab></Wnd0><Wnd1>
         <Tabs>
           <Tab>
             <Identity>TabID-4529-10607</Identity>
@@ -46,20 +46,20 @@
           </Tab>
         <Tab><Identity>TabID-30231-4424</Identity><TabName>Debug Log</TabName><Factory>Debug-Log</Factory><Session/></Tab></Tabs>
         
-      <SelectedTab>0</SelectedTab></Wnd3></Windows>
+      <SelectedTab>0</SelectedTab></Wnd1></Windows>
     <Editor>
       
       
       
       
-    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\source\main.c</Filename><XPos>0</XPos><YPos>24</YPos><SelStart>873</SelStart><SelEnd>873</SelEnd></Tab><ActiveTab>0</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\source\TimerAinit.c</Filename><XPos>0</XPos><YPos>8</YPos><SelStart>620</SelStart><SelEnd>620</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\source\main.c</Filename><XPos>0</XPos><YPos>14</YPos><SelStart>918</SelStart><SelEnd>918</SelEnd></Tab><ActiveTab>0</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\source\segLcd.c</Filename><XPos>0</XPos><YPos>57</YPos><SelStart>4325</SelStart><SelEnd>4325</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
     <Positions>
       
       
       
       
       
-    <Top><Row0><Sizes><Toolbar-0135cb98><key>iaridepm.enu1</key></Toolbar-0135cb98></Sizes></Row0></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>491</Bottom><Right>285</Right><x>-2</x><y>-2</y><xscreen>318</xscreen><yscreen>210</yscreen><sizeHorzCX>248438</sizeHorzCX><sizeHorzCY>286885</sizeHorzCY><sizeVertCX>224219</sizeVertCX><sizeVertCY>673497</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>196</Bottom><Right>1282</Right><x>-2</x><y>-2</y><xscreen>1284</xscreen><yscreen>198</yscreen><sizeHorzCX>1003125</sizeHorzCX><sizeHorzCY>270492</sizeHorzCY><sizeVertCX>248438</sizeVertCX><sizeVertCY>286885</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+    <Top><Row0><Sizes><Toolbar-0135cb98><key>iaridepm.enu1</key></Toolbar-0135cb98></Sizes></Row0></Top><Left><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>491</Bottom><Right>285</Right><x>-2</x><y>-2</y><xscreen>318</xscreen><yscreen>210</yscreen><sizeHorzCX>248438</sizeHorzCX><sizeHorzCY>286885</sizeHorzCY><sizeVertCX>224219</sizeVertCX><sizeVertCY>673497</sizeVertCY></Rect></Wnd0></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd1><Rect><Top>-2</Top><Left>-2</Left><Bottom>196</Bottom><Right>1282</Right><x>-2</x><y>-2</y><xscreen>1284</xscreen><yscreen>198</yscreen><sizeHorzCX>1003125</sizeHorzCX><sizeHorzCY>270492</sizeHorzCY><sizeVertCX>248438</sizeVertCX><sizeVertCY>286885</sizeVertCY></Rect></Wnd1></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
   </Desktop>
 </Workspace>
 
