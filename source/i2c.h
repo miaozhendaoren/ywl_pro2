@@ -2,9 +2,6 @@
 #define _I2C_H  
                                             //全局宏定义开始-------------
 
-enum _IICSTATE {eIIC_FREE, eIIC_BUSY};
-typedef enum _IICSTATE IICSTATE;
-
 //IIC是否使用IO模拟
 #define IIC_IO_SIM    1
 
@@ -30,7 +27,6 @@ typedef enum _IICSTATE IICSTATE;
 
 /*************************************************************************/
 #else                                       //外部引用开始---------
-extern IICSTATE ge_iicState;
 extern void Init_I2c(void);
 
 #if IIC_IO_SIM

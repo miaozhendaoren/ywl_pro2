@@ -44,6 +44,20 @@ ActionState=1
 [Trace1]
 Enabled=0
 ShowSource=1
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
+[CallStackLog]
+Enabled=0
+[DriverProfiling]
+Enabled=0
+Mode=0
+Graph=0
+Symbiont=0
 [Breakpoints]
 Count=0
 [FET]
@@ -65,13 +79,6 @@ SP=0
 SR=0
 all registers=0
 File name=
-[Log file]
-LoggingEnabled=_ 0
-LogFile=_ ""
-Category=_ 0
-[TermIOLog]
-LoggingEnabled=_ 0
-LogFile=_ ""
 [Aliases]
 A0=_ "D:\我的文档\GitHub\git_pro\source\Com.c" "D:\我的文档\GitHub\ywl_pro2\source\Com.c"
 A1=_ "E:\setup\project\ywl_pro2\source\Com.c" ""
@@ -80,10 +87,3 @@ A3=_ "G:\11-project\ywl_pro2\source\Com.c" ""
 A4=_ "G:\11-project\ywl_pro2\source\TimerAinit.c" ""
 Count=5
 SuppressDialog=1
-[CallStackLog]
-Enabled=0
-[DriverProfiling]
-Enabled=0
-Mode=0
-Graph=0
-Symbiont=0

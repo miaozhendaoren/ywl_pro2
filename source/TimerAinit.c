@@ -14,14 +14,22 @@ static u_int8 u8CapPos_edge = 0;  //上升沿捕获
 功    能：定时器A初始化
 参    数：无
 返回值  ：无
-说    明：定时器A 连续增模式， CCR0通道不用，CCR1用于产生125K脉冲,
-          CCR2用于捕获,进入TAR的脉冲为MCLK或SMCLK，最后分频到1MHz
+说    明：CCR2用于捕获,进入TAR的脉冲为MCLK或SMCLK，最后分频到1MHz
 ********************************************/
 void TimerA_reset(void)
 {
   u16start_CCR2 = 0;
   u16end_CCR2 = 0;
   u16ovCnt_TAR = 0;
+
+  //脉宽计数特殊功能IO初始化
+
+  /* P1.3 ----> CCR2捕获引脚CCI2A   接ICL7135 busy引脚 
+  ** P1.4 SMCLK OUT 250K脉冲输出    接ICL7135 clk引脚
+  */
+  P1SEL |= BIT3 + BIT4;
+  P1DIR &= ~BIT3;
+  P1DIR |= BIT4;
 
   TACTL |= TACLR;
   CCTL2 = CAP + CM_1 + SCS + CCIS_0 + CCIE; //CCR2 捕获模式，上升沿捕获，同步，捕获输入端 CCI2A(),允许中断

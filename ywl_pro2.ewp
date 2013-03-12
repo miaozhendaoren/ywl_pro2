@@ -1871,6 +1871,9 @@
   <group>
     <name>doc</name>
     <file>
+      <name>$PROJ_DIR$\source\debug_list.txt</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\doc\51&#x7684;AD&#x82AF;&#x7247;&#x9A71;&#x52A8;\ICL7135&#x4e0e;&#x5355;&#x7247;&#x673A;&#x7684;&#x4e00;&#x79CD;&#x7B80;&#x5355;&#x63A5;&#x53e3;.PDF</name>
     </file>
     <file>
@@ -1882,41 +1885,44 @@
   </group>
   <group>
     <name>source</name>
-    <file>
-      <name>$PROJ_DIR$\source\BoardConfig.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\source\Com.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\source\db18b20.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\source\debug_list.txt</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\source\FM24CL64.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\source\i2c.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\source\Lib.c</name>
-    </file>
+    <group>
+      <name>&#x516C;&#x5171;&#x5e93;</name>
+      <file>
+        <name>$PROJ_DIR$\source\Lib.c</name>
+      </file>
+    </group>
+    <group>
+      <name>&#x9A71;&#x52A8;</name>
+      <file>
+        <name>$PROJ_DIR$\source\BoardConfig.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\source\Com.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\source\db18b20.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\source\FM24CL64.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\source\i2c.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\source\PCF8562.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\source\PCF8563.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\source\TimerAinit.c</name>
+      </file>
+    </group>
     <file>
       <name>$PROJ_DIR$\source\main.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\source\PCF8562.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\source\PCF8563.c</name>
-    </file>
-    <file>
       <name>$PROJ_DIR$\source\segLcd.c</name>
-    </file>
-    <file>
-      <name>$PROJ_DIR$\source\TimerAinit.c</name>
     </file>
   </group>
 </project>

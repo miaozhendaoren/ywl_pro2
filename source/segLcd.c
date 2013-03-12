@@ -4,6 +4,10 @@
 #include "PCF8562.h"
 #include "segLcd.h"
 
+/* 段码液晶驱动,用到i2c总线驱动
+**
+*/
+
 /* 1888 四个数字显示位缓冲区 */
 #define G_a     (0x80000000 >> 24)
 #define G_b     (0x80000000 >> 25)
