@@ -28,10 +28,12 @@
 /*************************************************************************/
 #else                                       //外部引用开始---------
 extern void Init_I2c(void);
-
+extern void Start_I2c(void);
+extern void Stop_I2c(void);
+extern void   SendByte(u_int8 c, u_int8 *pAck);
+extern u_int8 RcvByte(void);
+extern void Ack_I2c(u_int8 dat);
 #if IIC_IO_SIM
-extern u_int8 ISendStr(u_int8 sla,u_int8 suba,u_int8 *s,u_int8 no);
-extern u_int8 IRcvStr(u_int8 sla,u_int8 suba,u_int8 *s,u_int8 no);
 
 #endif
 

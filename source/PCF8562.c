@@ -6,7 +6,34 @@
 
 
 #define IICADDR8562    0x70      //8562 IIC 地址 0x70
+/*******************************************************************
+                     向有子地址器件发送多字节数据函数               
+函数原型: u_int8   ISendStr(u_int8 sla,u_int8 suba,ucahr *s,u_int8 no);  
+功能:     向I2C总线上从机地址为sla的器件发送 ：子地址suba 以及 s指向的缓冲区 no个字节
+返回：    如果返回1表示操作成功，否则操作有误。
+********************************************************************/
+u_int8 ISendStr(u_int8 sla,u_int8 suba,u_int8 *s,u_int8 no)
+{
+    u_int8 i;
+    u_int8 ack;
+    
+    ack = 0;                    //初始化为非应答
+    
+    Start_I2c();                /*启动总线*/
+    SendByte(sla,&ack);              /*发送器件地址*/
+    if(ack==0)return(0);
+    SendByte(suba,&ack);             /*发送器件子地址*/
+    if(ack==0)return(0);
+    for(i=0;i<no;i++)
+    {   
+      SendByte(*s,&ack);             /*发送数据*/
+      if(ack==0)return(0);
+      s++;
+    } 
+    Stop_I2c();                 /*结束总线*/ 
 
+    return(1);
+}
 /**************************************************************
 名称：u_int8 PCF8562_init(void)
 功能：PCF8562初始化：静态,1/2偏置,显示,成功返回1
