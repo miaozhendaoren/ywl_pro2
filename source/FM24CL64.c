@@ -5,7 +5,7 @@
 #include "i2c.h"
 #include "FM24CL64.h"
 
-#define IICADDR24CL64   0x01
+#define IICADDR24CL64   0xA0
 
 /**************************************************************
 名称：u_int8   Read_FRAM(u_int16 start_addr, u_int8* pbuf, u_int8 num)
@@ -58,7 +58,7 @@ u_int8 Write_FRAM(u_int16 start_addr, const u_int8* pbuf, u_int8 num)
   Start_I2c();                          //启动总线
 
   SendByte(IICADDR24CL64 & 0xfe,&ack);  //发送FRAM从机地址-写
-  if(ack==0)return(0);
+  if(ack==0)while(1);//(0);
   SendByte( (u_int8)(start_addr>>8), &ack); //发送FRAM存储空间地址-高字节
   if(ack==0)return(0);
   SendByte( (u_int8)(start_addr&0x00ff), &ack); //发送FRAM存储空间地址-低字节
