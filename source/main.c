@@ -34,14 +34,19 @@ void main(void)
 
     //I2C总线初始化
     Init_I2c();
-    MakeDisBuf(-1020,DIS_Dot, BLK_NONE);
+    //PCF8562初始化
+    PCF8562_init();
+    delay_ms(10);
     
     //开总中断    
     _EINT();    
     while(1)
     {
-       CycleTask_SegDis();
-       delay_ms(1000);
-
+       for(i=0; i<255; i++)
+       {
+        MakeDisBuf(-127+i,DIS_Dot + DIS_B + DIS_J, BLK_B );
+        CycleTask_SegDis();
+        delay_ms(300);         
+       }
     }
 }//end main()

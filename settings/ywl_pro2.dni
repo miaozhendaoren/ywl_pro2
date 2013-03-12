@@ -15,10 +15,10 @@ Control Register=0
 NextState0=0
 NextState1=0
 [Action Register]
-Break=2
-State Storage=2
+Break=1
+State Storage=1
 [DebugChecksum]
-Checksum=2041060444
+Checksum=1863088418
 [CallStack]
 ShowArgs=0
 [Disassembly]
@@ -44,13 +44,6 @@ ActionState=1
 [Trace1]
 Enabled=0
 ShowSource=1
-[Log file]
-LoggingEnabled=_ 0
-LogFile=_ ""
-Category=_ 0
-[TermIOLog]
-LoggingEnabled=_ 0
-LogFile=_ ""
 [CallStackLog]
 Enabled=0
 [DriverProfiling]
@@ -58,6 +51,13 @@ Enabled=0
 Mode=0
 Graph=0
 Symbiont=0
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[TermIOLog]
+LoggingEnabled=_ 0
+LogFile=_ ""
 [Breakpoints]
 Count=0
 [FET]
