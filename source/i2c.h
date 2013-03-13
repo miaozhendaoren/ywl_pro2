@@ -9,12 +9,12 @@
 #ifdef  I2C                                //内部定义声明开始-----------
 
 #if IIC_IO_SIM  
-#define IIC_PORT_DIR  P2DIR
-#define IIC_PORT_IN   P2IN   
-#define IIC_PORT_OUT  P2OUT   
+#define IIC_PORT_DIR  P1DIR         //debug_105
+#define IIC_PORT_IN   P1IN          //SCL P1.2    原来SCL P2.6
+#define IIC_PORT_OUT  P1OUT         //SDA P1.3    原来SDA P2.4
 
-#define SDA    BIT4   
-#define SCL    BIT6  
+#define SDA    BIT3   
+#define SCL    BIT2                 //debug_105_end
 
 #define SDA_1  (IIC_PORT_DIR &= ~SDA)
 #define SDA_0  (IIC_PORT_DIR |= SDA)

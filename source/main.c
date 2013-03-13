@@ -33,25 +33,46 @@ void main(void)
     BCSCTL2 |= SELM_2;                //MCLK = XT2CLK = 8MHz
     BCSCTL2|= SELM_2 + SELS + DIVS_2; //XT2CLK = 8MHz, SMCLK from XT2CLK/4 = 2MHz
 
+    //debug_105
+    ConfigBoard(0xb8);
+    //debug_105_end
+    
     //串口初始化
     Uart0Init();
     //I2C总线初始化
     Init_I2c();
     
-    for(i=0; i<10; i++)
-      test[i] = 0x30+i;
-    
     //开总中断    
     _EINT();    
     while(1)
     {
-        Uart0CharSnd( Write_FRAM(0,&test[0],9) + 0x30);
+      /*
+        //写入
+        Write_FRAM(0,&test[0],9);
+        Uart0NCharSnd(&test[0],9);
         while(TXBUF_SNDING == u8TxbufStat);
         Uart0CharSnd('\n');
         while(TXBUF_SNDING == u8TxbufStat);
-
-        Uart0CharSnd(Read_FRAM(0,&test[0],9) + 0x30);
+        Uart0CharSnd('W');
         while(TXBUF_SNDING == u8TxbufStat);
+        Uart0CharSnd('\n');
+        while(TXBUF_SNDING == u8TxbufStat);
+      
+        //清零
+        for(i=0; i<10; i++)
+          test[i] = 0x30 + 0;
+        Uart0NCharSnd(&test[0],9);
+        while(TXBUF_SNDING == u8TxbufStat);
+        Uart0CharSnd('\n');
+        while(TXBUF_SNDING == u8TxbufStat);
+      */
+        
+        //读出
+        Read_FRAM(1,&test[0],9);
+        Uart0NCharSnd(&test[0],9);        
+        while(TXBUF_SNDING == u8TxbufStat);
+        for(i=0; i<10; i++)
+          test[i] = 0;        
         Uart0CharSnd('\n');
         while(TXBUF_SNDING == u8TxbufStat);
         

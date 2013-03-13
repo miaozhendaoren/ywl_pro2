@@ -4,3 +4,5 @@ debug_101   注销while(1){...}中的ICL7135脉冲测量
 debug_102   用在原来的板子上，添加配置,更改IO引脚配置
 
 debug_103   IIC调试
+
+debug_105   FRAM铁电在我的(liqinhong)开发板上调试,重新定义I2C总线引脚
